@@ -45,10 +45,7 @@ def download(file: dict, target: typing.Union[str, bytes, os.PathLike]):
         # cleanup previous install
         # TODO: should get modules of previously installed version.
         for module in file["modules"]:
-            shutil.rmtree(
-                path=target / module["name"],
-                ignore_errors=True,
-            )
+            shutil.rmtree(target / module["name"], ignore_errors=True)
 
         # unzip download to addons dir
         with zipfile.ZipFile(fp, "r") as zp:

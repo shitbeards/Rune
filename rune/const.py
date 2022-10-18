@@ -35,4 +35,8 @@ else:
     )
 
 ADDONS_DIR = os.environ.get("RUNE_ADDONS_DIR", ADDONS_DIR)
-ADDONS_DIR = pathlib.Path(ADDONS_DIR).absolute()
+ADDONS_DIR = pathlib.Path(ADDONS_DIR).expanduser().absolute()
+
+APP_DATA = os.environ.get("RUNE_ADDONS_DIR", "~/.rune")
+APP_DATA = pathlib.Path(APP_DATA).expanduser().absolute()
+APP_DATA.mkdir(exist_ok=True)
