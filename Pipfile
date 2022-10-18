@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 docopt = "*"
+requests = "*"
+toml = "*"
+packaging = "*"
 
 [dev-packages]
 
